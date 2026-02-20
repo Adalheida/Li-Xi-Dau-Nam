@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>🎉 Chúc mừng bạn!</title>
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(45deg, red, orange, yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial;
+    text-align: center;
+}
+
+.box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px black;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkgreen;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>🎉 Chúc mừng!!! 🎉</h1>
+    <p>LÌ XÌ ĐẦU NĂM</p>
+    <button onclick="startTroll()">Nhận lì xì ngay</button>
+</div>
+
+<script>
+function startTroll() {
+
+    // bật full màn hình
+    document.documentElement.requestFullscreen();
+
+    // thay toàn bộ nội dung bằng video Rick Roll
+    document.body.innerHTML = `
+        <iframe width="100%" height="100%"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+        </iframe>
+    `;
+
+    // hỏi lại nếu người ta cố thoát
+    window.onbeforeunload = function() {
+        return "Bạn chắc chắn muốn rời khỏi trang?";
+    };
+}
+</script>
+
+</body>
+</html>
